@@ -14,8 +14,8 @@
 
 こんな感じで：
 
-<img src="envelope-mp1.png" alt="envelope1" style="width: 120px;"/>
-<img src="envelope-mp2.png" alt="envelope2" style="width: 120px;"/>
+<img src="envelope-mp1.png" alt="envelope1" style="width: 80px;"/>
+<img src="envelope-mp2.png" alt="envelope2" style="width: 80px;"/>
 
 ## GitHub
 
