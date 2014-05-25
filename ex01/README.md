@@ -17,6 +17,12 @@
 <img src="envelope-mp1.png" alt="envelope1" width="240"/>
 <img src="envelope-mp2.png" alt="envelope2" width="240"/>
 
+(これらは，むかし [MetaPost](http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?MetaPost)
+という言語を使って描いたものです．)
+
+これができたら，次は短期費用曲線群を描いてみる．
+関数形は，それっぽくなるようなものを自分で探して設定する．
+
 ## GitHub
 
 * [github.com](https://github.com) で新しい「レポジトリ」を作る (初回のみ)．
@@ -50,11 +56,10 @@ y = f(x, t=1)
 このままだと，t=1 と決め打ちなのでとうぜん1本の直線が引かれるだけである．  
 t の値を変えつつ plot していきたいので，t についての `for` ループに入れる．  
 グラフを何本も描くのは，たとえば An Introductory Example の
-[Exercise 6](http://quant-econ.net/python_by_example.html#exercise-6) でやった．
+[Exercise 6](http://quant-econ.net/python_by_example.html#exercise-6) でやった．  
+[Matplotlib のレクチャー](http://quant-econ.net/matplotlib.html)の3本の正規分布の曲線の例も参照のこと．
 
-* ちなみに，論文の図
-(むかし，[MetaPost](http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?MetaPost)
-という言語を使って描きました) では，
+* ちなみに，論文の図では，
   * 横軸座標の範囲は -5 から 5
   * パラメタの値 (傾き) は，左の図では -2 から 2 まで 1/3 刻み，右の図では
     -3 から 3 まで 1/5 刻み
@@ -73,6 +78,7 @@ t の値を変えつつ plot していきたいので，t についての `for` 
 * 22行目の `ax.plot` の x, y 以外の引数を適宜いじる．
   * `'r-'` だと赤くなるので，`'b-'` (黒) にする．
   * label もいらない．
+    消すなら `ax.legend(...)` と合わせて消す．
 * 目盛りもいらないので消したい．
   「目盛り」は英語で ticks．
   ticks matplotlib で検索してみよう．
