@@ -1,7 +1,10 @@
 課題1 (2014/5/19)
 =========
 
-「包絡線定理」の図を書いてみる．
+論文
+* 尾山大輔・安田洋祐「経済学で出る包絡線定理」『経済セミナー』2011年10・11月号
+
+を読んで「包絡線定理」の図を書いてみる．
 
 * Matplotlib を使う．
   ゼミの wiki の [Matplotlib のページ](http://oyamazemi.wiki.fc2.com/wiki/Matplotlib)参照．
@@ -20,7 +23,8 @@
 (これらは，むかし [MetaPost](http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?MetaPost)
 という言語を使って描いたものです．)
 
-これができたら，次は短期費用曲線群を描いてみる．
+これができたら，次は短期費用曲線群を描いてみる
+(新しいファイルを作った方がよいでしょう)．
 関数形は，それっぽくなるようなものを自分で探して設定する．
 
 ## GitHub
@@ -71,6 +75,9 @@ t の値を変えつつ plot していきたいので，t についての `for` 
   もし非整数値刻みにしたければどうすればよいか．
 
   → たとえば，単位 u を決めて t=n*u として n を `range()` で回す．
+
+  ほかのやり方もある：  
+  [Python decimal range() step value](http://stackoverflow.com/questions/477486/python-decimal-range-step-value)
 
 ### 体裁
 * グリッドはいらない．
