@@ -1,6 +1,13 @@
 課題2 (2014/6/2)
 =========
 
+できあがった図をファイルに保存，GitHub のレポジトリのページに表示，そして TeX でレポートを書く．
+
+* 提出方法：GitHub にファイルをプッシュする．
+* 締め切り：6月7日 (土)
+
+
+
 ## できあがった図をファイルに保存する
 
 直線の本数や間隔を変えた図を2つ作って，それぞれファイルに保存してみましょう．
@@ -89,9 +96,10 @@ plt.savefig(envelope1.pdf, bbox_inches='tight', pad_inches=0)
 SourceTree でこれらのファイルをコミット&プッシュしておく．
 
 
+
 ## PNG ファイルを GitHub レポジトリのページに表示させる
 
-(上の項をとばしてここからやりたい人は，[testimages](testimages) の中の
+(最初の項をとばしてここからやりたい人は，[testimages](testimages) の中の
 envelope0.png と envelope1.png をダウンロードして作業フォルダに保存し，SourceTree でコミット&プッシュしておいてください．)
 
 README.md ファイルに次のように書き込む：
@@ -115,9 +123,50 @@ README.md ファイルに次のように書き込む：
 と書き込む (width のあとの数字を適宜調整する)．
 
 README.md ファイルの編集のしかたは2通りあって，
+
 * 自分のコンピュータの作業ファイル内の README.md をいつも使っているテキストエディタで開いて編集
   (そのあと SourceTree で README.md をコミット&プッシュ)
 * Web ブラウザで自分の GitHub のレポジトリのページに行って README.md を開き，Edit ボタンを押して編集
+
 のいずれかでやる．
 
 Web ブラウザで自分の GitHub のレポジトリのページを開いて，うまくいっているか確認．
+
+[Writing on GitHub](https://help.github.com/categories/88/articles)
+
+
+
+## TeX でレポートを書く
+
+(最初の項をとばしてここからやりたい人は，[testimages](testimages) の中の
+envelope0.pdf と envelope1.pdf をダウンロードして作業フォルダに保存し，SourceTree でコミット&プッシュしておいてください．)
+
+[sample.tex](sample.tex) を開き，その中身を
+
+* 奥村本から TeX をインストールした人は，TeXShop (Mac) あるいは TeXWorks (Windows) で新しいファイルを新規作成してコピー
+* 大学では，mi で新しいファイルを新規作成してコピー
+
+して，たとえば envelope-report.tex という名前で作業ファイル内に保存する (拡張子重要)．
+
+
+## 奥村本から TeX をインストールした人
+
+TeXShop (Mac) あるいは TeXWorks (Windows) で「タイプセット」する．
+
+
+## 大学
+
+「[まず使ってみる](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/)」に書いてあるとおりにやってみる．
+
+
+いずれの場合も，エラーが出たらエラーメッセージとともに (みんなも Cc して) メール送ってください．
+
+
+## レポート内容を書く
+
+* 包絡線定理について説明する．
+* 自分のコードについて説明する．工夫した点，今後の課題などを述べる．
+
+
+できたら (途中でも) envelope-report.tex と envelope-report.pdf ファイルを SourceTree でコミット&プッシュする．
+(ほかにもたくさんファイルができるが，それらはプッシュしない．)
