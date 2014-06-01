@@ -26,7 +26,7 @@
 `plt.show()` の直前に
 
 ```python
-plt.savefig(envelope0.png)
+plt.savefig('envelope0.png')
 ```
 
 と書いて実行すると，(いまのパラメタの値がセット0なら) セット0の図が envelope0.png に保存される
@@ -35,40 +35,55 @@ plt.savefig(envelope0.png)
 パラメタの値をセット1に変え，また，`plt.savefig(envelope0.png)` を
 
 ```python
-plt.savefig(envelope1.png)
+plt.savefig('envelope1.png')
 ```
 
 と変えて実行すると，セット1の図が envelope1.png に保存される．
 
 * 例えば，
   セット0実行時
-  
+
   ```python
   value_max, num_values = 2, 13
   #value_max, num_values = 3, 31
   ```
-  
+
   セット1実行時
-  
+
   ```python
   #value_max, num_values = 2, 13
   value_max, num_values = 3, 31
   ```
-  
+
   のように，使わない方に "#" をつけるようにすると，少し手間が減る．
 
-* ただ，本当は，パラメタ値のセットのリストを作って，そのリストの要素に関する `for` ループを作って回すべき．
+* もう少し洗練されたやり方としては，たとえば
+  ```python
+  FIGNUM = 0  # 0 or 1
+  if FIGNUM == 0:
+      value_max, num_values = 2, 13
+  if FIGNUM == 1:
+      value_max, num_values = 3, 31
+  ```
+  として `FIGNUM` が 0 か 1 かでパラメタ値のセットをスイッチさせ，`savefig` のほうも
+  ```python
+  plt.savefig('envelope' + str(FIGNUM) + '.png')
+  ```
+  として自動でファイル名に番号を振る，というのもあります．
+  (`FIGNUM = 0` として1回実行し，`FIGNUM = 1` と変えて2回目を実行する．)
+
+* パラメタ値のセットのリストを作って，そのリストの要素に関する `for` ループを作って回すようにすると，全部自動化できます．
 
 透過ファイルにして，余白をゼロにしたければ `transparent=True, bbox_inches='tight', pad_inches=0` をつけて
 
 ```python
-plt.savefig(envelope0.png, transparent=True, bbox_inches='tight', pad_inches=0)
+plt.savefig('envelope0.png', transparent=True, bbox_inches='tight', pad_inches=0)
 ```
 
 あるいは
 
 ```python
-plt.savefig(envelope1.png, transparent=True, bbox_inches='tight', pad_inches=0)
+plt.savefig('envelope1.png', transparent=True, bbox_inches='tight', pad_inches=0)
 ```
 
 とする．
@@ -153,12 +168,24 @@ envelope0.pdf と envelope1.pdf をダウンロードして作業フォルダに
 ### 奥村本から TeX をインストールした人
 
 TeXShop (Mac) あるいは TeXWorks (Windows) で「タイプセット」する．
+エラーが出なければ envelope-report.pdf というファイルができる．
 
 
 ### 大学
 
 「[まず使ってみる](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/start/)」に書いてあるとおりにやってみる．
 
+ターミナルを開き，作業フォルダまで cd で移動し，
+```
+platex envelope-report
+```
+と打つ．
+エラーが出なければ，次は
+```
+dvipdfmx envelope-report
+```
+と打つ (`-p b5` を入れなければ A4 になる)．
+エラーが出なければ envelope-report.pdf というファイルができる．
 
 いずれの場合も，エラーが出たらエラーメッセージとともに (みんなにも Cc して) メール送ってください．
 
@@ -172,5 +199,5 @@ TeXShop (Mac) あるいは TeXWorks (Windows) で「タイプセット」する�
 自分の言葉で書くこと．引用する場合は引用元を明記すること．
 
 
-できたら (途中でも) envelope-report.tex と envelope-report.pdf ファイルを SourceTree でコミット&プッシュする．
+できたら (途中でも) envelope-report.tex と envelope-report.pdf の2つのファイルを SourceTree でコミット&プッシュする．
 (ほかにもたくさんファイルができるが，それらはプッシュしない．)
