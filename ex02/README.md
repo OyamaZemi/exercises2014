@@ -203,6 +203,13 @@ ebb envelope1.pdf
 
 と打つ
 (「[グラフィックス](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/graphicx/)」参照)．
+そのあと再度
+
+```
+dvipdfmx envelope-report
+```
+
+と打つ．
 エラーが出なければ envelope-report.pdf というファイルができる．
 
 いずれの場合も，エラーが出たらエラーメッセージとともに (みんなにも Cc して) メール送ってください．
