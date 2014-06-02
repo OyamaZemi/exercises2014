@@ -186,8 +186,8 @@ platex envelope-report
 
 ```
 dvipdfmx envelope-report
-
 ```
+
 と打つ (`-p b5` を入れなければ A4 になる)．
 "File `envelope0.bb' not found" のようなエラーが出たら，
 
@@ -210,12 +210,23 @@ ebb envelope1.pdf
 
 ### レポートの中身を書く
 
+envelope-report.tex を編集してレポートの中身を書く
+(「[LaTeX](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/) の各項目参照)．
+
 * 包絡線定理について説明する．
 * 自分のコードについて説明する．工夫した点，今後の課題などを述べる．
 
 **コピペ厳禁！**
 自分の言葉で書くこと．引用する場合は引用元を明記すること．
 
+* 画像のサイズを調整したければ，たとえば
+  
+  ```
+  \includegraphics[scale=0.5]{envelope0.pdf}
+  ```
+  
+  などと書く
+  (scale は倍率を指定する)．
 
-できたら (途中でも) envelope-report.tex と envelope-report.pdf の2つのファイルを SourceTree でコミット&プッシュする．
+できあがったら (途中でも) envelope-report.tex と envelope-report.pdf の2つのファイルを SourceTree でコミット&プッシュする．
 (ほかにもたくさんファイルができるが，それらはプッシュしない．)
