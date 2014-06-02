@@ -201,7 +201,8 @@ ebb envelope0.pdf
 ebb envelope1.pdf
 ```
 
-と打つ．
+と打つ
+(「[グラフィックス](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/graphicx/)」参照)．
 エラーが出なければ envelope-report.pdf というファイルができる．
 
 いずれの場合も，エラーが出たらエラーメッセージとともに (みんなにも Cc して) メール送ってください．
