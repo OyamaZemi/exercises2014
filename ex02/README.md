@@ -115,7 +115,8 @@ SourceTree でこれらのファイルをコミット&プッシュしておく�
 ## PNG ファイルを GitHub レポジトリのページに表示させる
 
 (最初の項をとばしてここからやりたい人は，[testimages](testimages) の中の
-envelope0.png と envelope1.png をダウンロードして作業フォルダに保存し，SourceTree でコミット&プッシュしておいてください．)
+envelope0.png と envelope1.png をダウンロードして作業フォルダに保存し，SourceTree でコミット&プッシュしておいてください．
+あとで自分のプログラムの出力ファイルに入れかえること．)
 
 README.md ファイルに次のように書き込む：
 
@@ -155,7 +156,8 @@ Web ブラウザで自分の GitHub のレポジトリのページを開いて�
 ## TeX でレポートを書く
 
 (最初の項をとばしてここからやりたい人は，[testimages](testimages) の中の
-envelope0.pdf と envelope1.pdf をダウンロードして作業フォルダに保存し，SourceTree でコミット&プッシュしておいてください．)
+envelope0.pdf と envelope1.pdf をダウンロードして作業フォルダに保存し，SourceTree でコミット&プッシュしておいてください．
+あとで自分のプログラムの出力ファイルに入れかえること．)
 
 [sample.tex](sample.tex) を開き，その中身を
 
@@ -182,13 +184,6 @@ platex envelope-report
 ```
 
 と打つ．
-エラーが出なければ，次は
-
-```
-dvipdfmx envelope-report
-```
-
-と打つ (`-p b5` を入れなければ A4 になる)．
 "File `envelope0.bb' not found" のようなエラーが出たら，
 
 ```
@@ -206,10 +201,17 @@ ebb envelope1.pdf
 そのあと再度
 
 ```
-dvipdfmx envelope-report
+platex envelope-report
 ```
 
 と打つ．
+さらなるエラーが出なければ，今度は
+
+```
+dvipdfmx envelope-report
+```
+
+と打つ (`-p b5` を入れなければ A4 になる)．
 エラーが出なければ envelope-report.pdf というファイルができる．
 
 いずれの場合も，エラーが出たらエラーメッセージとともに (みんなにも Cc して) メール送ってください．
@@ -226,12 +228,12 @@ envelope-report.tex を編集してレポートの中身を書く
 **コピペ厳禁！**
 自分の言葉で書くこと．引用する場合は引用元を明記すること．
 
-* 画像のサイズを調整したければ，たとえば
-  
+* 画像のサイズを調整したければ，envelope-report.tex でたとえば
+
   ```
   \includegraphics[scale=0.5]{envelope0.pdf}
   ```
-  
+
   などと書く
   (scale は倍率を指定する)．
 
