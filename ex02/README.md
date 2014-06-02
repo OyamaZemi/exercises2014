@@ -176,15 +176,32 @@ TeXShop (Mac) あるいは TeXWorks (Windows) で「タイプセット」する�
 「[まず使ってみる](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/start/)」に書いてあるとおりにやってみる．
 
 ターミナルを開き，作業フォルダまで cd で移動し，
+
 ```
 platex envelope-report
 ```
+
 と打つ．
 エラーが出なければ，次は
+
 ```
 dvipdfmx envelope-report
+
 ```
 と打つ (`-p b5` を入れなければ A4 になる)．
+"File `envelope0.bb' not found" のようなエラーが出たら，
+
+```
+ebb envelope0.pdf
+```
+
+および
+
+```
+ebb envelope1.pdf
+```
+
+と打つ．
 エラーが出なければ envelope-report.pdf というファイルができる．
 
 いずれの場合も，エラーが出たらエラーメッセージとともに (みんなにも Cc して) メール送ってください．
