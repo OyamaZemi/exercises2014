@@ -96,13 +96,13 @@ PDF ファイルにも保存しておく．
 セット0, セット1それぞれに対して，
 
 ```python
-plt.savefig(envelope0.pdf, bbox_inches='tight', pad_inches=0)
+plt.savefig('envelope0.pdf', bbox_inches='tight', pad_inches=0)
 ```
 
 および
 
 ```python
-plt.savefig(envelope1.pdf, bbox_inches='tight', pad_inches=0)
+plt.savefig('envelope1.pdf', bbox_inches='tight', pad_inches=0)
 ```
 
 と書いて実行する (拡張子に注意)．
@@ -211,7 +211,7 @@ ebb envelope1.pdf
 ### レポートの中身を書く
 
 envelope-report.tex を編集してレポートの中身を書く
-(「[LaTeX](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/) の各項目参照)．
+(「[LaTeX](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/)」の各項目参照)．
 
 * 包絡線定理について説明する．
 * 自分のコードについて説明する．工夫した点，今後の課題などを述べる．
