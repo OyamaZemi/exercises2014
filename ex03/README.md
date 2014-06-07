@@ -9,7 +9,7 @@ Fictitious play のシミュレーションをしてみる．
 
 ## Fictitious Play
 
-[Fictitious play の説明](http://nbviewer.ipython.org/github/oyamad/exercises/blob/master/ex03/fictplay_notes.ipynb)
+[Fictitious play の説明](http://nbviewer.ipython.org/github/OyamaZemi2014/exercises/blob/master/ex03/fictplay_notes.ipynb)
 
 
 ## やること
