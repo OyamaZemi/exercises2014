@@ -3,7 +3,7 @@
 
 Fictitious play のシミュレーションをしてみる．
 
-* 提出方法：GitHub にファイルをプッシュする．
+* 提出方法：GitHub にファイルをプッシュする (新規レポジトリを作成すること)．
 * 締め切り：6月21日 (土)
 
 
@@ -29,6 +29,8 @@ Fictitious play のシミュレーションをしてみる．
    [Matplotlib - quant-econ](http://quant-econ.net/matplotlib.html)
    参照のこと．
 
+3. それぞれのグラフは png ファイルに保存し，前回同様 README.md からリンクして
+   github.com のページに表示されるようにする．
 
 ## 拡張
 
