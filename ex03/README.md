@@ -14,7 +14,7 @@ Fictitious play のシミュレーションをしてみる．
 
 ## やること
 
-1. 説明をよく読んで，0 期から T-1 期までの信念 x_0(t), x_1(t) の動きをプロットする
+1. Fictitious play の説明をよく読んで，0 期から T-1 期までの信念 x_0(t), x_1(t) の動きをプロットする
    (T は 100 とか 1000 とか自分で設定する)．
 
    An Introductory Example - quant-econ の
@@ -32,8 +32,10 @@ Fictitious play のシミュレーションをしてみる．
 3. それぞれのグラフは png ファイルに保存し，前回同様 README.md からリンクして
    github.com のページに表示されるようにする．
 
-## 拡張
+## 発展
 
 * 他の 2x2 ゲームでもやってみる．
+* [Object Oriented Programming - quant-econ](http://quant-econ.net/python_oop.html)
+  にならって class を定義して使ってみる．
 * 3x3 ゲームもやってみる．
 * 利得や選択にランダムネスを入れてみる．
