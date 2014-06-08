@@ -214,6 +214,17 @@ dvipdfmx envelope-report
 と打つ (`-p b5` を入れなければ A4 になる)．
 エラーが出なければ envelope-report.pdf というファイルができる．
 
+#### 追記
+
+大学の dvipdfmx はフォントを埋め込まない設定になってました．
+フォント埋め込むために `-f ptex-hiragino.map` というオプションをつけて
+
+```
+dvipdfmx -f ptex-hiragino.map envelope-report
+```
+
+と打ち込むようにしましょう．
+
 いずれの場合も，エラーが出たらエラーメッセージとともに (みんなにも Cc して) メール送ってください．
 
 
@@ -239,3 +250,24 @@ envelope-report.tex を編集してレポートの中身を書く
 
 できあがったら (途中でも) envelope-report.tex と envelope-report.pdf の2つのファイルを SourceTree でコミット&プッシュする．
 (ほかにもたくさんファイルができるが，それらはプッシュしない．)
+
+
+### PDF ファイルに README.md からリンクを張る
+
+github.com のサーバの仕様で，PDF ファイルはウェブブラウザでは表示されず，強制ダウンロードするようになっています．
+これは煩わしいので，Google Docs Viewer を通して表示させるようにしましょう．
+
+README.md の最後にでも
+
+```
+[背景とコードの説明](https://docs.google.com/viewer?url=https://github.com/USERNAME/envelope/blob/master/envelope-report.pdf?raw=true)
+```
+
+の一行を加えてください．
+ただし，
+
+* ユーザ名: USERNAME
+* レポジトリ名: envelope
+* レポートの (拡張子を除く) ファイル名: envelope-report
+
+になっているので，各自適切に変えてください．
