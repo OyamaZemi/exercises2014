@@ -56,7 +56,7 @@ matchingpennies_plot.pdf をダウンロードして作業フォルダに保存�
 fictplay-slides.tex を編集して発表スライドの中身を書く
 (「[LaTeX](http://hwb.ecc.u-tokyo.ac.jp/current/applications/latex/)」の各項目参照)．
 
-* 包絡線定理について説明する．
+* Fictitious play について説明する．
 * 自分のコードについて説明する．工夫した点，今後の課題などを述べる．
 
 **コピペ厳禁！**
@@ -74,4 +74,4 @@ SourceTree でコミット&プッシュする．
 
 ### PDF ファイルに README.md からリンクを張る
 
-Google Docs Viewer を通して表示させる．
+fictplay-slides.pdf を Google Docs Viewer を通して表示させる．
