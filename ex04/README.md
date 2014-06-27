@@ -50,6 +50,10 @@ matchingpennies_plot.pdf をダウンロードして作業フォルダに保存�
 やり方を忘れた人は[課題2](../ex02/README.md)やゼミの
 [Wiki](http://oyamazemi.wiki.fc2.com) の関連箇所を見てみる．
 
+(6/27追記)
+ゼミの Wiki の [Beamer](http://oyamazemi.wiki.fc2.com/wiki/Beamer)
+の項目での指摘にしたがって，beamer-sample.tex で `containsverbatim` を `fragile` に変更．
+
 
 ### スライドの中身を書く
 
