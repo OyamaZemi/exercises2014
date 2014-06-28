@@ -9,18 +9,18 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 
 ## KMR モデル
 
-[Fictitious play の説明](http://nbviewer.ipython.org/github/OyamaZemi2014/exercises/blob/master/ex05/KMR_notes.ipynb)
+[KMR の確率進化動学の説明](http://nbviewer.ipython.org/github/OyamaZemi2014/exercises/blob/master/ex05/KMR_notes.ipynb)
 
 
 ## やること
 
-1. KMR モデルの説明をよく読んで，0 期から T-1 期までの X_t の列を生成し，X_t(N) の動きをプロットする．
+1. KMR モデルの説明をよく読んで，0 期から T-1 期までの X\_t の列を生成し，X\_t(N) の動きをプロットする．
    (epsilon は小さい値に設定し，それに依存して T は大きい値に設定する)．
 
-2. また，X_t そのものではなく，X_t の実現値の頻度分布 \bar{X}_t の様子も調べる．
-   (\bar{X}_t の動きをプロットしたり，\bar{X}_{T-1} の分布をヒストグラムにしてみたりする．)
+2. また，X\_t そのものではなく，X\_t の実現値の頻度分布 \\bar{X}\_t の様子も調べる．
+   (\\bar{X}\_t の動きをプロットしたり，\\bar{X}\_{T-1} の分布をヒストグラムにしてみたりする．)
 
-3. {X_t} の定常分布を求めてヒストグラムにする．
+3. {X\_t} の定常分布を求めてヒストグラムにする．
    epsilon を小さくしていって，定常分布の変化の様子を見る．
 
 4. (ゼロから自分でコードを書いてもよいが)
