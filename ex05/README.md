@@ -41,3 +41,19 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 * [Object Oriented Programming - quant-econ](http://quant-econ.net/python_oop.html)
   にならって class を定義して使ってみる．
 * 3x3 ゲームもやってみる．
+
+
+## 定常状態 (2014/7/12)
+
+遷移行列を書いてしまえば，あとはそれを mc_tools.py の `mc_compute_stationary`
+に渡せば定常状態を返してくれるわけですが，
+突然変異の確率 epsilon がとても小さかったり，プレイヤーの数がとても大きかったりすると，
+負の要素を含むベクトルを返してくることがあるようです．
+
+以下の議論を参照：
+
+* [4×4行列で、こんな例を見つけました](https://github.com/haru110jp/KMR/commit/73033cc0dab28d6b9f32cba2fdf55b88f520dbee)
+
+* [mc_compute_stationary returns a vector with a negative element?](https://github.com/haru110jp/KMR/issues/1)
+
+対処法は考え中．
