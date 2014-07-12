@@ -35,6 +35,25 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 5. それぞれのグラフは png ファイルに保存し，前回同様 README.md からリンクして
    github.com のページに表示されるようにする．
 
+6. あるいは，[ここ](http://nbviewer.ipython.org/github/oyamad/stochevolution/blob/master/KMR_2x2_example.ipynb)を参考にして，
+   IPython notebook での実行例を保存した .ipynb ファイルをプッシュし，
+   REAME.md から nbviewer.ipython.org を通してリンクする．
+
+   たとえば，
+
+   ```
+   [実行結果](http://nbviewer.ipython.org/github/USERNAME/stochevolution/blob/master/KMR_2x2_example.ipynb)
+   ```
+
+   のように書く．
+   ただし，
+
+   * ユーザ名: USERNAME
+   * レポジトリ名: stochevolution
+   * ファイル名: KMR_2x2_example.ipynb
+
+   になっているので，各自適切に変える．
+
 
 ## 発展
 
