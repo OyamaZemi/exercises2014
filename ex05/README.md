@@ -53,7 +53,6 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 以下の議論を参照：
 
 * [4×4行列で、こんな例を見つけました](https://github.com/haru110jp/KMR/commit/73033cc0dab28d6b9f32cba2fdf55b88f520dbee)
-
 * [mc_compute_stationary returns a vector with a negative element?](https://github.com/haru110jp/KMR/issues/1)
 
 対処法は考え中．
