@@ -74,4 +74,44 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 * [4×4行列で、こんな例を見つけました](https://github.com/haru110jp/KMR/commit/73033cc0dab28d6b9f32cba2fdf55b88f520dbee)
 * [mc_compute_stationary returns a vector with a negative element?](https://github.com/haru110jp/KMR/issues/1)
 
-対処法は考え中．
+
+## 定常分布 - その後 (2014/8/8)
+
+### 原因
+
+上記のような遷移行列では，最大固有値は 1 のはずですが，2番目に大きい固有値が 1 に非常に近いようで，
+(古いバージョンの) `mc_compute_stationary` はその2番目の固有値に対する固有ベクトルを返してきていたようです．
+そのような固有ベクトルは一般には (normalize しても) 確率分布にはならない．
+
+### 対処法
+
+浮動小数点計算の精度を上げて1番目と2番目の固有値の差が有意に判別できるようにすればよい．
+[mpmath](http://mpmath.org) という，任意の精度で計算をしてくれるパッケージがあるので，それを使う．
+
+それで書いてみたのが以下のコード：
+
+* [mc_compute_stationary_mpmath.py](https://github.com/oyamad/test_mc_compute_stationary#mc_compute_stationary_mpmathpy)
+
+その機能は新しいバージョンの
+[mc_tools.py](https://github.com/jstac/quant-econ/blob/master/quantecon/mc_tools.py)
+に取り入れてもらいました．
+
+### mpmath
+
+その mpmath ですが：
+
+* 固有値を計算してくれる `eig` という関数は mpmath version 0.18 以降でないと入っていない
+  (現在の最新バージョンは0.19)．
+* mpmath の最新版をインストールするのが一つの手だが，
+  mpmath は [SymPy](http://sympy.org) というパッケージに含まれていて，
+  その SymPy は Anaconda に含まれている．
+* が，今学期はじめにインストールした Anaconda のバージョンは1.9.2で，そこに含まれる
+  SymPy (version 0.7.4.1) に入っている mpmath のバージョンは0.17．
+* Anaconda を最新版にアップデートすると，SymPy のバージョン0.7.5が入っていて，
+  それに入っている mpmath のバージョンは0.18になっている．
+
+ということで，ゼミの wiki の
+「[Anaconda のアップデート](http://oyamazemi.wiki.fc2.com/wiki/Anaconda%20のアップデート)」
+のページを参考にして Anaconda をアップデートしてください．
+
+アップデートしたら，新しい `mc_compute_stationary` で定常分布が正しく返ってくるかチェックしてみてください．
