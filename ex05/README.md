@@ -57,7 +57,7 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 
 ## 発展
 
-* [Object Oriented Programming - quant-econ](http://quant-econ.net/python_oop.html)
+* [Object Oriented Programming - quant-econ](http://quant-econ.net/py/python_oop.html)
   にならって class を定義して使ってみる．
 * 3x3 ゲームもやってみる．
 
@@ -93,7 +93,8 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 * [mc_compute_stationary_mpmath.py](https://github.com/oyamad/test_mc_compute_stationary#mc_compute_stationary_mpmathpy)
 
 その機能は新しいバージョンの
-[mc_tools.py](https://github.com/jstac/quant-econ/blob/master/quantecon/mc_tools.py)
+[mc_tools.py](https://github.com/QuantEcon/QuantEcon.py/blob/8ee46a2894550534ffb0e8bdf42f7d56994b271f/quantecon/mc_tools.py)
+(2014/8/12 のバージョン)
 に取り入れてもらいました．
 
 ### mpmath
@@ -115,3 +116,59 @@ Kandori-Mailath-Rob (KMR) の確率進化モデルのシミュレーションを
 のページを参考にして Anaconda をアップデートしてください．
 
 アップデートしたら，新しい `mc_compute_stationary` で定常分布が正しく返ってくるかチェックしてみてください．
+
+
+## 定常分布 - その後 (2014/11/4)
+
+その後，よく考えてみたのですが：
+
+* マルコフ連鎖の遷移行列は必ず 1 を固有値にもっていて，固有値 1 に対応する固有ベクトルが定常分布，
+  ということがわかっているのに，一般の固有値問題を解く関数を使うのは筋が悪い
+* そもそも mpmath は遅い
+
+と思い至りました．
+
+### Grassmann-Taksar-Heyman (GTH) アルゴリズム
+
+P を遷移行列とすると，定常分布は
+x P = x すなわち x (P - I) = 0 という x (行ベクトル) についての連立線形方程式の 0 ベクトル以外の (基準化) 解として求まります
+(I は単位行列)．
+連立方程式の解法のひとつに[ガウスの消去法](http://ja.wikipedia.org/wiki/ガウスの消去法) (あるいは掃き出し法)
+というのがありますが，
+このアルゴリズムは引き算を含むので epsilon がとても小さかったりプレイヤーの数が大きかったりするときに使うと，
+非常に近い数どうしの引き算が[桁落ち](http://ja.wikipedia.org/wiki/誤差#.E6.A1.81.E8.90.BD.E3.81.A1)を引き起こし，
+まったく見当違いの答を返してくることがあります．
+(このような桁落ちが最初のケースで起きていたと考えられます．)
+
+GTH アルゴリズムは，入力行列 P - I がもつ「行についての和はつねに 0」という性質を使って引き算を回避するものです．
+桁落ちが起きないので，KMR 行列でも正しく定常分布を求めてくれます．
+詳しくは[この資料](http://www.sti.uniurb.it/events/sfm07pe/slides/Stewart_1.pdf)
+(pp.44-81) 参照のこと．
+
+Numpy を使って書いたのが [gth_solve.py](https://github.com/QuantEcon/QuantEcon.py/blob/master/quantecon/gth_solve.py)．
+
+GTH アルゴリズムは既約な遷移行列にしか使えないので，可約な行列を既約な行列に分解するアルゴリズムを実装するコードも書いて，
+あわせて QuantEcon ライブラリに入れてもらいました．
+バージョン 0.1.6 から使えるようになっています．
+
+経緯については以下の以下の議論を参照のこと：
+
+* [MARKOV: More efficient implementation for computing stationary distributions](https://github.com/QuantEcon/QuantEcon.py/pull/79)
+
+### QuantEcon ライブラリのアップデート
+
+すでに QuantEcon ライブラリをインストールしている人は，ターミナルで `-U` オプションをつけて
+
+```
+pip install quantecon -U
+```
+
+と打ってアップデートしてください．
+
+アップデート完了後ターミナルで
+
+```
+python -c "import quantecon; print quantecon.__version__"
+```
+
+と打って `0.1.6` と返ってくれば正しくインストールされています．
