@@ -155,6 +155,13 @@ GTH アルゴリズムは既約な遷移行列にしか使えないので，可�
 
 * [MARKOV: More efficient implementation for computing stationary distributions](https://github.com/QuantEcon/QuantEcon.py/pull/79)
 
+#### 追記 (2014/11/27)
+
+ついでに練習がてら Julia バージョンも書いてみて
+[QuantEcon.jl](https://github.com/QuantEcon/QuantEcon.jl)
+の方に入れてもらいました．
+[コード](https://github.com/QuantEcon/QuantEcon.jl/blob/master/src/mc_tools.jl#L74-L104)．
+
 ### QuantEcon ライブラリのアップデート
 
 すでに QuantEcon ライブラリをインストールしている人は，ターミナルで `-U` オプションをつけて
